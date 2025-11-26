@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  themetool.csproj
+
+  Purpose:
+  MSBuild project file for the ThemeTool application.
+  Defines how the C# source files are compiled into the executable.
+
+  Configuration:
+  - Target: Console executable (Exe)
+  - Framework: .NET Framework 3.5
+  - Build tool: MSBuild 3.5 (Visual Studio 2008)
+
+  This file is used by MSBuild and Visual Studio to compile the project.
+-->
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Project Properties -->
+  <PropertyGroup>
+    <!-- Default to Debug configuration if not specified -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+
+    <!-- Target platform: AnyCPU (works on both x86 and x64) -->
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+
+    <!-- Unique identifier for this project -->
+    <ProjectGuid>{7207C141-2B62-42A9-9F3B-F90755637036}</ProjectGuid>
+
+    <!-- Output type: Console application executable -->
+    <OutputType>Exe</OutputType>
+
+    <!-- Name of the output assembly (ThemeTool.exe) -->
+    <AssemblyName>ThemeTool</AssemblyName>
+
+    <!-- Target .NET Framework version 3.5 -->
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+
+    <!-- Application version (used for versioning) -->
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+
+    <!-- File alignment in bytes (512 is standard) -->
+    <FileAlignment>512</FileAlignment>
+
+    <!-- Root namespace for all classes -->
+    <RootNamespace>ThemeApi</RootNamespace>
+  </PropertyGroup>
+  <!-- Debug Configuration: For development and testing -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <!-- Build for any CPU architecture -->
+    <PlatformTarget>AnyCPU</PlatformTarget>
+
+    <!-- Generate debug symbols (.pdb file) for debugging -->
+    <DebugSymbols>true</DebugSymbols>
+
+    <!-- Full debug information for detailed debugging -->
+    <DebugType>full</DebugType>
+
+    <!-- Disable code optimization for easier debugging -->
+    <Optimize>false</Optimize>
+
+    <!-- Output compiled files to bin\Debug\ -->
+    <OutputPath>bin\Debug\</OutputPath>
+
+    <!-- Define DEBUG and TRACE preprocessor constants -->
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+
+    <!-- Show error prompt on compilation errors -->
+    <ErrorReport>prompt</ErrorReport>
+
+    <!-- Highest warning level (4 = all warnings) -->
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <!-- Release Configuration: For production deployment -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <!-- Build for any CPU architecture -->
+    <PlatformTarget>AnyCPU</PlatformTarget>
+
+    <!-- Generate minimal debug info (.pdb) for stack traces only -->
+    <DebugType>pdbonly</DebugType>
+
+    <!-- Enable code optimization for smaller, faster executable -->
+    <Optimize>true</Optimize>
+
+    <!-- Output compiled files to bin\Release\ -->
+    <OutputPath>bin\Release\</OutputPath>
+
+    <!-- Define only TRACE preprocessor constant (no DEBUG) -->
+    <DefineConstants>TRACE</DefineConstants>
+
+    <!-- Show error prompt on compilation errors -->
+    <ErrorReport>prompt</ErrorReport>
+
+    <!-- Highest warning level (4 = all warnings) -->
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <!-- Source Files: Files to be compiled into the executable -->
+  <ItemGroup>
+    <!-- Main implementation with COM interfaces and logic -->
+    <Compile Include="ThemeManagerHelpClass.cs" />
+
+    <!-- Assembly metadata (version information) -->
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <!-- Import C# build targets from MSBuild -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
