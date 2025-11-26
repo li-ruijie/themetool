@@ -1,0 +1,53 @@
+# themetool.sln
+#
+# Purpose:
+# Visual Studio solution file for the ThemeTool project.
+# This file organizes project(s) and defines build configurations.
+#
+# A solution file (.sln) is a container that can hold one or more projects.
+# Visual Studio uses this file to load and manage all projects in the solution.
+#
+# This solution contains:
+# - ThemeTool project (C# console application)
+#
+# Build configurations:
+# - Debug: For development with full debugging symbols
+# - Release: For production with optimizations enabled
+
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+
+# Project Declaration
+# Format: Project("{TypeGuid}") = "Name", "ProjectPath", "{ProjectGuid}"
+# TypeGuid FAE04EC0-301F-11D3-BF4B-00C04F79EFBC = C# project
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeTool", "themetool.csproj", "{7207C141-2B62-42A9-9F3B-F90755637036}"
+EndProject
+
+# Global configuration for all projects in this solution
+Global
+	# Define available build configurations
+	# Format: Configuration|Platform = Configuration|Platform
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+
+	# Map each project to its build configurations
+	# ActiveCfg: Which configuration to use for this project
+	# Build.0: Whether to build this project in this configuration
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		# Debug configuration for ThemeTool project
+		{7207C141-2B62-42A9-9F3B-F90755637036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7207C141-2B62-42A9-9F3B-F90755637036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+
+		# Release configuration for ThemeTool project
+		{7207C141-2B62-42A9-9F3B-F90755637036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7207C141-2B62-42A9-9F3B-F90755637036}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+
+	# Solution-level properties
+	GlobalSection(SolutionProperties) = preSolution
+		# HideSolutionNode: Don't show solution node in Solution Explorer
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
